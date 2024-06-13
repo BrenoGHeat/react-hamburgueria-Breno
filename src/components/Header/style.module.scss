@@ -4,16 +4,15 @@
     justify-content: space-between;
     align-items: center;
 
+    border: 1px solid transparent;
+
     width: 100%;
     padding-block: 1rem;
-    
-    background-color: var(--color-gray-600);
+    padding-left: 7.375rem;
+    background-color: var(--color-gray-0);
 
- 
     & img{
+        
         max-width: 9.375rem;
-        padding-left:118px;
-          
     }
-
 }
