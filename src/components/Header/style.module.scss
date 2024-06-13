@@ -1,0 +1,19 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding-block: 1rem;
+    
+    background-color: var(--color-gray-600);
+
+ 
+    & img{
+        max-width: 9.375rem;
+        padding-left:118px;
+          
+    }
+
+}
