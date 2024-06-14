@@ -23,6 +23,8 @@ export const HomePage = () => {
       } , [productList] )
 
    // adição, exclusão, e exclusão geral do carrinho
+      
+
 
    // renderizações condições e o estado para exibir ou não o carrinho
 
