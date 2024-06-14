@@ -8,12 +8,13 @@
     flex-direction: column;
    
     max-width: 18.75rem;
-    width: 100%;
     
+    width: 100%;
+
     font-family: var(--font-primary);
 
     & img{
-        background-color: var(--color-gray-100);
+        background-color: #F5F5F5;
     }
 
     & button{

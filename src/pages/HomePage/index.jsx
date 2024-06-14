@@ -6,7 +6,7 @@ import { ProductList } from "../../components/ProductList";
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
-
+  
    // useEffect montagem - carrega os produtos da API e joga em productList
       useEffect(() => {
          const getProducts = async () => {
@@ -14,21 +14,23 @@ export const HomePage = () => {
             const json = await response.json();
                setProductList(json);
          }
-          getProducts();
+               getProducts();
       }, []);
 
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
       useEffect(() => {
             localStorage.setItem("@MYPRODUCTLIST" , JSON.stringify(productList));
-      } , [productList])
-
-
-
-
+      } , [productList] )
 
    // adição, exclusão, e exclusão geral do carrinho
+
    // renderizações condições e o estado para exibir ou não o carrinho
+
+
    // filtro de busca
+
+
+
    // estilizar tudo com sass de forma responsiva
 
    return (
