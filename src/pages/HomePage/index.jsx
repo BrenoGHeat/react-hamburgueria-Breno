@@ -20,10 +20,24 @@ export const HomePage = () => {
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
       useEffect(() => {
             localStorage.setItem("@MYPRODUCTLIST" , JSON.stringify(productList));
-      } , [productList] )
+      } , [productList] );
+
+      useEffect(() => {
+         localStorage.setItem('@MYCARTLIST', JSON.stringify(cartList));
+      }, [cartList]);
+   
+
 
    // adição, exclusão, e exclusão geral do carrinho
-      
+
+
+
+   const clearCart = () => {
+      setCartList([]);
+   };
+
+   const totalPrice = cartList.reduce ((acumulador,item) =>
+      acumulador + item.price * item.quantity, 0 );
 
 
    // renderizações condições e o estado para exibir ou não o carrinho
