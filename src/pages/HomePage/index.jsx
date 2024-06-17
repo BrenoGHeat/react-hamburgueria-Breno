@@ -6,6 +6,7 @@ import { ProductList } from "../../components/ProductList";
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
+   const [isOpen, setIsOpen] = useState(false);
   
    // useEffect montagem - carrega os produtos da API e joga em productList
       useEffect(() => {
@@ -18,19 +19,18 @@ export const HomePage = () => {
       }, []);
 
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-      useEffect(() => {
-            localStorage.setItem("@MYPRODUCTLIST" , JSON.stringify(productList));
-      } , [productList] );
+       useEffect(() => {
+         const savedCartList = JSON.parse(localStorage.getItem('@MYCARTLIST'));
+         if (savedCartList) {
+            setCartList(savedCartList);
+      }
+   }, []);
 
-      useEffect(() => {
-         localStorage.setItem('@MYCARTLIST', JSON.stringify(cartList));
-      }, [cartList]);
-   
-
-
+  
    // adição, exclusão, e exclusão geral do carrinho
-
-
+   const removeFromCart = (productId) => {
+      setCartList(prevCartList => prevCartList.filter(item => item.id !== productId));
+   };
 
    const clearCart = () => {
       setCartList([]);
