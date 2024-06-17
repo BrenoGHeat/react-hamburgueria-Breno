@@ -1,18 +1,9 @@
 .header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
 
-    border: 1px solid transparent;
-
- 
     width: 100%;
-    
    
-    padding-block: 1rem;
-    padding-left: 7.375rem;
     background-color: var(--color-gray-0);
+
 
     & img{
         
@@ -39,4 +30,23 @@
         }
     }
 
+}
+
+
+.miniHeader{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid transparent;
+ 
+    width: 100%;
+    max-width: 85.5rem;
+   
+    padding-block: 1rem;
+    
+    margin: 0 auto;
+   
 }

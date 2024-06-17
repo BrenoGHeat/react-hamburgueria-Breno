@@ -8,6 +8,7 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
+      <div className={styles.miniHeader}>
       <img src={Logo} alt="Logo Kenzie Burguer" />
       <div>
         <button>
@@ -24,6 +25,7 @@ export const Header = () => {
             <MdSearch size={21} />
           </button>
         </form>
+      </div>
       </div>
     </header>
   );

@@ -28,6 +28,22 @@ export const HomePage = () => {
 
   
    // adição, exclusão, e exclusão geral do carrinho
+   const addToCart = (product) => {
+      setCartList(prevCartList => {
+         const itemInCart = prevCartList.find(item => item.id === product.id);
+
+         if (itemInCart) {
+            return prevCartList.map(item =>
+               item.id === product.id
+                  ? { ...item, quantity: item.quantity + 1 }
+                  : item
+            );
+         } else {
+            return [...prevCartList, { ...product, quantity: 1 }];
+         }
+      });
+   };
+
    const removeFromCart = (productId) => {
       setCartList(prevCartList => prevCartList.filter(item => item.id !== productId));
    };
@@ -37,10 +53,14 @@ export const HomePage = () => {
    };
 
    const totalPrice = cartList.reduce ((acumulador,item) =>
-      acumulador + item.price * item.quantity, 0 );
+      acumulador + item.price , 0 );
 
 
    // renderizações condições e o estado para exibir ou não o carrinho
+
+   const openModal = () => {
+      setIsOpen(prevIsOpen => !prevIsOpen);
+   };
 
 
    // filtro de busca
@@ -53,8 +73,8 @@ export const HomePage = () => {
       <>
          <Header />
          <main>
-            <ProductList productList={productList} />
-            <CartModal cartList={cartList} />
+            <ProductList productList={productList} addToCart={addToCart} />
+            <CartModal cartList={cartList} clearCart={clearCart} removeFromCart={removeFromCart} setIsOpen={setIsOpen} />
          </main>
       </>
    );
