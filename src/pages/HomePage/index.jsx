@@ -73,8 +73,9 @@ export const HomePage = () => {
       <>
          <Header />
          <main>
-            <ProductList productList={productList} addToCart={addToCart} />
-            <CartModal cartList={cartList} clearCart={clearCart} removeFromCart={removeFromCart} setIsOpen={setIsOpen} />
+            <ProductList productList={productList} addToCart={addToCart} setIsOpen={setIsOpen} />
+            {isOpen ? <CartModal cartList={cartList} clearCart={clearCart} removeFromCart={removeFromCart} setIsOpen={setIsOpen} /> : null }
+            
          </main>
       </>
    );

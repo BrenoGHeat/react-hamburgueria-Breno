@@ -3,7 +3,7 @@ import { CartItemCard } from "./CartItemCard";
 
 import styles from "./style.module.scss";
 
-export const CartModal = ({ cartList , clearCart , removeFromCart , setIsOpen }) => {
+export const CartModal = ({ cartList , clearCart , removeFromCart , setIsOpen , children }) => {
    const total = cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
    }, 0);
@@ -14,6 +14,7 @@ export const CartModal = ({ cartList , clearCart , removeFromCart , setIsOpen })
          <div >
             <h2>Carrinho de compras</h2>
             <button onClick={() => setIsOpen(false)}  aria-label="close" title="Fechar">
+               {children}
                <MdClose size={21} />
             </button>
          </div>
