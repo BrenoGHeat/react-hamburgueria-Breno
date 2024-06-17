@@ -9,6 +9,7 @@ export const HomePage = () => {
    const [total, setTotal] = useState(0);
    const [isOpen, setIsOpen] = useState(false);
    const [totalItem, setTotalItem] = useState(0);
+   const localCartList = localStorage.getItem("@MYCARTLIST");
   
    // useEffect montagem - carrega os produtos da API e joga em productList
       useEffect(() => {
@@ -49,6 +50,10 @@ export const HomePage = () => {
       setCartList([]);
    };
 
+   useEffect(() => {
+      localStorage.setItem("@MYCARTLIST" , JSON.stringify(cartList));
+   } , [cartList]);
+
 
    useEffect(() =>{
 
@@ -70,7 +75,7 @@ export const HomePage = () => {
 
    return (
       <>
-         <Header  openModal={openModal} totalItem={totalItem} />
+         <Header openModal={openModal} totalItem={totalItem} />
          <main>
             <ProductList productList={productList} addToCart={addToCart} />
             {isOpen ? <CartModal cartList={cartList} clearCart={clearCart} removeFromCart={removeFromCart} setIsOpen={setIsOpen} /> : null }
