@@ -6,6 +6,7 @@ export const CartItemCard = ({ product , removeFromCart }) => {
          <div>
             <img src={product.img} alt={product.name} />
             <h3>{product.name}</h3>
+            <p>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</p>
          
          </div>
          <button onClick={() => removeFromCart(product.id)} aria-label="delete" title="Remover item">
