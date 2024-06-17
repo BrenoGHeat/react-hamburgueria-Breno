@@ -12,15 +12,24 @@
 
     & button{
         font-weight: 900;
-        font-size: 22px;
+    
         background: transparent;
         color: #BDBDBD;
         border: 1px solid transparent;
         position: relative;
 
         & span{
-            position: relative; 
-         
+
+            display: block;
+
+            position: absolute; 
+
+            padding: 5px 5px;
+
+            top: -45%;
+            right: -0.5rem;
+            
+            font-size: 14px;
             border-radius: 7px;
             color: #FFFFFF;
             font-weight: 900;
@@ -45,7 +54,7 @@
     width: 100%;
     max-width: 85.5rem;
    
-    padding-block: 1rem;
+    padding-block: 2rem;
     
     margin: 0 auto;
    

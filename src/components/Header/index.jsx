@@ -3,7 +3,7 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "./style.module.scss";
 
-export const Header = () => {
+export const Header = ({openModal , totalItem}) => {
   const [value, setValue] = useState("");
 
   return (
@@ -11,11 +11,11 @@ export const Header = () => {
       <div className={styles.miniHeader}>
       <img src={Logo} alt="Logo Kenzie Burguer" />
       <div>
-        <button>
-          <MdShoppingCart size={21} />
-          <span>0</span>
+        <button onClick={openModal}>
+          <MdShoppingCart size={32} />
+          <span>{totalItem}</span>
         </button>
-        <form>
+        {/* <form>
           <input
             type="text"
             value={value}
@@ -24,7 +24,7 @@ export const Header = () => {
           <button type="submit">
             <MdSearch size={21} />
           </button>
-        </form>
+        </form> */}
       </div>
       </div>
     </header>
