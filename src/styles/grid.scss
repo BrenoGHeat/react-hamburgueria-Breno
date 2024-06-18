@@ -31,3 +31,15 @@
     font-size: 12px;
     color: var(--color-gray-300);
 }
+
+span.two{
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-gray-300); 
+}
+
+.miniproducts{
+    display: flex;
+    flex-direction: column;
+    
+}

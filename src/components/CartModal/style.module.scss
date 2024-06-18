@@ -10,6 +10,8 @@
     align-items: center;
 
     font-family: var(--font-primary);
+
+
 }
 
 .modalBox{
@@ -18,26 +20,33 @@
     background: white;
     flex-direction: column;
     flex-wrap: nowrap;
+    border-radius: 8px;
 
 }
 
 .modalHeader{
-background: var(--color-primary);
-border: 1px solid transparent;
-border-radius: 8px;
-color: #FFFFFF;
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
-justify-content: space-between;
-align-items: center;
+    background: var(--color-primary);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 
-padding: 14px 15px;
+    padding: 14px 15px;
    
 & h2{
     font-weight: 700;
     font-size: 18px;
 
+}
+
+& button{
+    background: var(--color-primary);
+    border: 1px solid transparent;
+    color: #FFFFFF80;
 }
 
 }
@@ -46,11 +55,97 @@ padding: 14px 15px;
 .modalProduct{
     background-color: #FFFFFF;
 
+    & ul{
+        display: flex;
+        gap: 14px;
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    & li{
+        display: flex;
+    
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:20px;
+
+        & h3{
+          font-weight: 700;
+          font-size: 18px;
+          color: var(--color-gray-600);
+        }
+
+        & p{
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--color-primary);
+           
+        }
+    }
+
+    & button{
+        font-weight: 900;
+        font-size: 18px;
+        color: #BDBDBD;
+        background-color: #FFFFFF;
+        border: 1px solid #FFFFFF;
+        
+    }
+
+    & img{
+        width: 100px;
+        background: var(--color-gray-100);
+        border-radius: 5px;
+       
+    }
+
 }
+
+.modalFooter{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+    & button{
+        width: 28.375rem;
+        height: 3.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+        border: 1px solid transparent;
+        border-radius: 8px;
+        background: #BDBDBD;
+        color: #FFFFFF;
+
+        font-weight: 600;
+        font-size: 16px;   
+    }
+
+    & span{
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--color-gray-600);
+    }
+
+}
+
 
 .modalPrice{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+   
+    padding-block: 1rem;
+
+    gap: 20px;
+    
+    border-top: 2px solid #E0E0E0;
 
 }
