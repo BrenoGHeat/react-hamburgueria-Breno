@@ -30,7 +30,7 @@ export const CartModal = ({ cartList , clearCart , removeFromCart , setIsOpen , 
                <span>Total</span>
                <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</span>
             </div>
-            <button onClick={clearCart}>Remover todos</button>
+            <button className="btn modal" onClick={clearCart}>Remover todos</button>
          </div>
       </div>
       </div>

@@ -40,13 +40,8 @@ padding: 14px 15px;
 
 }
 
-& button{
-   border: 1px solid transparent;
-   background: var(--color-primary);
-   color: #FFFFFF80;
-   
 }
-}
+
 
 .modalProduct{
     background-color: #FFFFFF;
@@ -55,5 +50,7 @@ padding: 14px 15px;
 
 .modalPrice{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
 }

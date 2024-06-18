@@ -4,12 +4,13 @@ import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 
 export const HomePage = () => {
+   const localCartList = JSON.parse(localStorage.getItem("@MYCARTLIST"));
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState([]);
+   const [cartList, setCartList] = useState(localCartList.length > 0 ? localCartList : []);
    const [total, setTotal] = useState(0);
    const [isOpen, setIsOpen] = useState(false);
    const [totalItem, setTotalItem] = useState(0);
-   const localCartList = localStorage.getItem("@MYCARTLIST");
+  
   
    // useEffect montagem - carrega os produtos da API e joga em productList
       useEffect(() => {
@@ -56,7 +57,7 @@ export const HomePage = () => {
 
 
    useEffect(() =>{
-
+     
       const lengthCart = cartList.length
          setTotalItem(lengthCart);
 
