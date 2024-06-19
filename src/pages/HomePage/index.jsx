@@ -6,7 +6,7 @@ import { ProductList } from "../../components/ProductList";
 export const HomePage = () => {
    const localCartList = JSON.parse(localStorage.getItem("@MYCARTLIST"));
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState(localCartList.length > 0 ? localCartList : []);
+   const [cartList, setCartList] = useState([]);
    const [total, setTotal] = useState(0);
    const [isOpen, setIsOpen] = useState(false);
    const [totalItem, setTotalItem] = useState(0);
@@ -38,33 +38,35 @@ export const HomePage = () => {
             alert("Item já adicionado no carrinho");
             return ;
       } 
-      setCartList([...cartList, product]);
+         const cart = [...cartList, product];
+      localStorage.setItem("@MYCARTLIST" , JSON.stringify(cart));
+      setCartList(cart);
 
    };
 
    const removeFromCart = (productId) => {
+   
       const newData = cartList.filter(item => item.id !== productId);
+      localStorage.setItem("@MYCARTLIST" , JSON.stringify(newData));
       setCartList(newData);
    };
 
    const clearCart = () => {
+      localStorage.setItem("@MYCARTLIST" , JSON.stringify([]));
       setCartList([]);
       setIsOpen(false);
    };
 
    useEffect(() => {
-      localStorage.setItem("@MYCARTLIST" , JSON.stringify(cartList));
-   } , [cartList]);
-
-
-   useEffect(() =>{
+    
      
       const lengthCart = cartList.length
-         setTotalItem(lengthCart);
+      setTotalItem(lengthCart);
 
       const totalPrice = cartList.reduce ((acumulador,item) =>
          acumulador + item.price , 0 );
          setTotal(totalPrice);
+
    } , [cartList]);
 
    // renderizações condições e o estado para exibir ou não o carrinho

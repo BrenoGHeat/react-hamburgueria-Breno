@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 
-export const useKeydown = () => {
+export const useKeydown = (callback) => {
     const ref = useRef(null);
  
     useEffect(() => {
         const handleKeydown = (event) => {
             if(event.key === "Escape"){
-                buttonRef.current?.click();
+               if(callback) callback(ref.current);
             }
         }
 

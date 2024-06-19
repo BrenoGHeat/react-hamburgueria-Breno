@@ -2,18 +2,28 @@ import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
 
 import styles from "./style.module.scss";
+import { useOutclick } from "../hooks/useOutclick";
+import { useKeydown } from "../hooks/useKeydown";
 
 export const CartModal = ({ cartList , clearCart , removeFromCart , setIsOpen , children }) => {
    const total = cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
    }, 0);
 
+   const modalRef = useOutclick(() =>{
+      setIsOpen(false);
+   })
+
+   const buttonRef = useKeydown((element) => {
+      element.click();
+   }) 
+
    return (
       <div role="dialog" className={styles.modal}>
-         <div className={styles.modalBox} >
+         <div  ref={modalRef} className={styles.modalBox} >
          <div className={styles.modalHeader}>
             <h2>Carrinho de compras</h2>
-            <button onClick={() => setIsOpen(false)}  aria-label="close" title="Fechar">
+            <button ref={buttonRef} onClick={() => setIsOpen(false)}  aria-label="close" title="Fechar">
                {children}
                <MdClose size={21} />
             </button>

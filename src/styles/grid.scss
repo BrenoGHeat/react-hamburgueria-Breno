@@ -52,7 +52,15 @@ span.two{
 @media (min-width:300px) and (max-width:900px){
    .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    overflow-x: auto;
+
     padding: 1rem;
+
+    > li{
+        min-width: 18rem;
+    }
    }
 }
