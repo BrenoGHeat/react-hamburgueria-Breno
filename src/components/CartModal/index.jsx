@@ -10,7 +10,7 @@ export const CartModal = ({ cartList , clearCart , removeFromCart , setIsOpen , 
 
    return (
       <div role="dialog" className={styles.modal}>
-         <div className={styles.modalBox} >
+         <div ref={modalRef}  className={styles.modalBox} >
          <div className={styles.modalHeader}>
             <h2>Carrinho de compras</h2>
             <button onClick={() => setIsOpen(false)}  aria-label="close" title="Fechar">
