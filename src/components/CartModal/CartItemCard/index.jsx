@@ -7,8 +7,10 @@ export const CartItemCard = ({ product , removeFromCart }) => {
          <div>
             <img src={product.img} alt={product.name} />
            
+           <div className="mini products">
             <h3>{product.name}</h3>
             <p>{product.price.toLocaleString('pt-BR', { style: "currency", currency: "BRL"})}</p>
+            </div>
            
 
          </div>

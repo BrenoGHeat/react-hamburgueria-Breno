@@ -49,6 +49,7 @@ export const HomePage = () => {
 
    const clearCart = () => {
       setCartList([]);
+      setIsOpen(false);
    };
 
    useEffect(() => {

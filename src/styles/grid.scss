@@ -37,3 +37,13 @@ span.two{
     font-size: 14px;
     color: var(--color-gray-300); 
 }
+
+
+.mini.products{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 12px;
+    align-items: flex-start;
+}
