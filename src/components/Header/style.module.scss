@@ -59,3 +59,14 @@
     margin: 0 auto;
    
 }
+
+
+@media (min-width:300px) and (max-width:900px){
+    .header{
+        padding: 1rem;
+    }
+
+    .miniHeader{
+        padding-block: 1rem;
+    }
+}

@@ -15,7 +15,7 @@
 }
 
 .modalBox{
-    width: 484px;
+    max-width: 30.25rem;
     display: flex;
     background: white;
     flex-direction: column;
@@ -150,3 +150,17 @@
 
 }
 
+
+@media (min-width:300px) and (max-width:900px){
+    .modalBox{
+        width: 95%;
+    }
+
+    .modalFooter{
+        & button{
+            max-width: 28.375rem;
+            width: 100%;
+        }
+    }
+    
+}
